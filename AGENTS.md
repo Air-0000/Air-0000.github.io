@@ -14,8 +14,8 @@
 - 与 Cloudflare 交互时，除项目存在 Wrangler 配置的情况外使用 cf CLI。本工程保留 Wrangler 配置和既有 Pages 发布命令。
 - GitHub 默认分支为 `main`；提交并推送维护源码不等于已经发布网站。
 - 免费 GitHub Pages 地址为 https://air-0000.github.io/，公开发布库为 `Air-0000/Air-0000.github.io`。
-- 用户要求发布到 GitHub Pages 时，先提交 public 改动，再执行 `npm run deploy:github`，只发布 public 静态文件，不能推送私有维护目录。
-- GitHub Pages 使用 main 根目录的分支构建，无需自定义 workflow；Cloudflare 继续使用原部署命令。
+- 用户要求发布到 GitHub Pages 时，先提交 public 改动，再执行 `npm run deploy:github`，只发布 public 静态文件，不向发布分支上传 public 之外的文件。
+- GitHub Pages 使用 gh-pages 根目录的分支构建，无需自定义 workflow；Cloudflare 继续使用原部署命令。
 
 ## 内容真实性
 
