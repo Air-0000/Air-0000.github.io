@@ -1,0 +1,27 @@
+{
+  "name": "my-portfolio",
+  "version": "2.1.0",
+  "description": "Zhengyang Liu — research and engineering portfolio",
+  "main": "script.js",
+  "scripts": {
+    "sync": "cp public/index.html public/projects.html public/style.css public/script.js public/evidence.html . && cp -R public/assets public/evidence .",
+    "deploy": "wrangler pages deploy public --project-name zyliu --branch main",
+    "zip": "zip -r ../my-portfolio.zip public",
+    "preview": "python3 -m http.server 18542 --bind 127.0.0.1 --directory public",
+    "check": "node --check public/script.js && node scripts/check-static.mjs",
+    "setup": "git config core.hooksPath .githooks",
+    "deploy:github": "npm run check && node scripts/deploy-github.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "wrangler": "^4.151.1"
+  },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Air-0000/Air-0000.github.io.git"
+  },
+  "homepage": "https://zyliu.pages.dev/"
+}
