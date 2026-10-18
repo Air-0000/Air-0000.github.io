@@ -1,0 +1,31 @@
+{
+  "source_filename": "eval_20261009_031533.json",
+  "source_sha256": "0ed14a51a45bfb539f0d83918733f065a5dcdf3bf7a6a0871a9d03663cd46867",
+  "recorded_at": "2026-10-09 03:15:33",
+  "timezone": "report local timezone not independently established",
+  "quick_mode": true,
+  "basic_chat": {
+    "samples": 8,
+    "non_empty_rate": 1.0,
+    "http_error_replies": 0
+  },
+  "continuous_dialogue": {
+    "total_rounds": 20,
+    "error_count": 0,
+    "empty_count": 0,
+    "self_repeat_count": 0
+  },
+  "vision_diagnostic": {
+    "samples": 3,
+    "http_500_replies": 3,
+    "note": "All three raw replies contained HTTP Error 500; the report recognition counter is not used as a vision accuracy measurement."
+  },
+  "health_snapshot": {
+    "observed_at": "2026-10-18T21:21:41.920904+08:00",
+    "http_status": 200,
+    "status": "ok",
+    "nili_server": "up",
+    "llama_up": true
+  },
+  "scope": "Historical quick diagnostic and current read-only health snapshot. No private conversation text or user state exported. No new chat/inference requests sent. Non-empty replies do not measure correctness."
+}

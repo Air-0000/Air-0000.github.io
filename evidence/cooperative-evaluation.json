@@ -1,0 +1,310 @@
+{
+  "title": "SE(2) temporal state filter — archived evaluation extract",
+  "dataset": "V2X-Seq-SPD (historical adapted evaluation)",
+  "batch_id": "temporal_filter_benchmark_20261017T093601Z",
+  "completed_at_utc": "2026-10-17T10:10:58.537667Z",
+  "source_filename": "temporal_filter_benchmark_results.json",
+  "source_sha256": "8bf305186eeed15b6fa2380e7e10b48f3badae8cb6c93509d89c5e3a1b652a88",
+  "numeric_review_filename": "audit_remediation_review_2026-10-18.json",
+  "numeric_review_sha256": "0625a7f9cccf5fc92b0a17fddcff1f6d6ae941cab450e597d09413174481b355",
+  "verified_numeric_cells": 64,
+  "scope": "Archived checkpoint evaluation. No new inference performed for this website. Not a DGC/UGIM component ablation. Whole-model same-policy replay remains open. No claim of canonical SE(3) noise.",
+  "records": [
+    {
+      "condition": "clean",
+      "arm": "baseline",
+      "validation_scenes": 21,
+      "scored_tokens": 675,
+      "token_sha256": "ad0f2ad31924e2d6312911bd4ad71d309a298ab9e19f6eb589a4cd7c358f81a3",
+      "car_ap_pct": 32.20571038939548,
+      "car_ate_m": 0.7874110613679519,
+      "car_tracking": {
+        "amota": 0.22862429652125563,
+        "motar": 0.47254207263064674,
+        "recall": 0.4631717399473882,
+        "tp": 2258.0,
+        "fp": 1191.0,
+        "ids": 207.0,
+        "mt": 106.0,
+        "gt": 5322.0,
+        "fn": 2857.0,
+        "mota": 0.20048853814355505
+      },
+      "protocol": "Historical adapted SPD/NuScenes; no claim of canonical SE(3) noise",
+      "evaluation_protocol": "SPD-adapted detection_cvpr_2019 / tracking_nips_2019",
+      "tracking_event_definitions": {
+        "tp": "MOT MATCH events",
+        "ids": "MOT SWITCH events",
+        "matched_detections": 2465.0,
+        "recall": "(tp + ids) / gt",
+        "working_point": "Per-class best MOTA; ties choose highest recall; not a shared fixed confidence"
+      },
+      "evaluator_script_sha256": "8a7a0f99b01b60a7bc1d68ef829c2d1d0a6101f742e0cea8ee9a309e32941256",
+      "input_sha256": {
+        "det": "67164bb6eaff157b19f283a1782f820005ed84d5ca5350a2a04cc24e628b5b61",
+        "track": "b92de6bcc56aa363137b4ff24cc343b9093f0cb90e15fecb4e5d0f43653055bf",
+        "split": "0a59332221f3618639f34fb70678d03c5221ab80fd69f2cf41acffca0d8859fd",
+        "infos": "b96cc81b1fd42913073f6b20c0d214981134c43e52231797d508967fda9c6e03"
+      }
+    },
+    {
+      "condition": "clean",
+      "arm": "temporal_filter",
+      "validation_scenes": 21,
+      "scored_tokens": 675,
+      "token_sha256": "ad0f2ad31924e2d6312911bd4ad71d309a298ab9e19f6eb589a4cd7c358f81a3",
+      "car_ap_pct": 31.079441714014706,
+      "car_ate_m": 0.8077087709229098,
+      "car_tracking": {
+        "amota": 0.21265154305793912,
+        "motar": 0.4653138272770174,
+        "recall": 0.43291995490417134,
+        "tp": 2119.0,
+        "fp": 1133.0,
+        "ids": 185.0,
+        "mt": 91.0,
+        "gt": 5322.0,
+        "fn": 3018.0,
+        "mota": 0.18526869597895523
+      },
+      "protocol": "Historical adapted SPD/NuScenes; no claim of canonical SE(3) noise",
+      "evaluation_protocol": "SPD-adapted detection_cvpr_2019 / tracking_nips_2019",
+      "tracking_event_definitions": {
+        "tp": "MOT MATCH events",
+        "ids": "MOT SWITCH events",
+        "matched_detections": 2304.0,
+        "recall": "(tp + ids) / gt",
+        "working_point": "Per-class best MOTA; ties choose highest recall; not a shared fixed confidence"
+      },
+      "evaluator_script_sha256": "8a7a0f99b01b60a7bc1d68ef829c2d1d0a6101f742e0cea8ee9a309e32941256",
+      "input_sha256": {
+        "det": "f8858785ad64cac23f4eb8ad0f14fe22374c889d3a3ddd855ff1a00892df1a3c",
+        "track": "af70f3bcf789e229548c6d01f25e0104c1d74ed84a4f63d969bea410bb8efc41",
+        "split": "0a59332221f3618639f34fb70678d03c5221ab80fd69f2cf41acffca0d8859fd",
+        "infos": "b96cc81b1fd42913073f6b20c0d214981134c43e52231797d508967fda9c6e03"
+      }
+    },
+    {
+      "condition": "loc20",
+      "arm": "baseline",
+      "validation_scenes": 21,
+      "scored_tokens": 675,
+      "token_sha256": "ad0f2ad31924e2d6312911bd4ad71d309a298ab9e19f6eb589a4cd7c358f81a3",
+      "car_ap_pct": 16.077596586038677,
+      "car_ate_m": 1.1773652268114447,
+      "car_tracking": {
+        "amota": 0.0,
+        "motar": 0.0,
+        "recall": 0.3767380683953401,
+        "tp": 1598.0,
+        "fp": 4386.0,
+        "ids": 407.0,
+        "mt": 66.0,
+        "gt": 5322.0,
+        "fn": 3317.0,
+        "mota": 0.0
+      },
+      "protocol": "Historical adapted SPD/NuScenes; no claim of canonical SE(3) noise",
+      "evaluation_protocol": "SPD-adapted detection_cvpr_2019 / tracking_nips_2019",
+      "tracking_event_definitions": {
+        "tp": "MOT MATCH events",
+        "ids": "MOT SWITCH events",
+        "matched_detections": 2005.0,
+        "recall": "(tp + ids) / gt",
+        "working_point": "Per-class best MOTA; ties choose highest recall; not a shared fixed confidence"
+      },
+      "evaluator_script_sha256": "8a7a0f99b01b60a7bc1d68ef829c2d1d0a6101f742e0cea8ee9a309e32941256",
+      "input_sha256": {
+        "det": "9dd28af9b52fb636828058c647cdd3e02415ae8088063b36dc4e79baeac920f7",
+        "track": "3702094ca9b8fa9cabca380baa78ff6d8a5b66fbc34c4b1a3fc7860f9fdbc7cb",
+        "split": "0a59332221f3618639f34fb70678d03c5221ab80fd69f2cf41acffca0d8859fd",
+        "infos": "b96cc81b1fd42913073f6b20c0d214981134c43e52231797d508967fda9c6e03"
+      }
+    },
+    {
+      "condition": "loc20",
+      "arm": "temporal_filter",
+      "validation_scenes": 21,
+      "scored_tokens": 675,
+      "token_sha256": "ad0f2ad31924e2d6312911bd4ad71d309a298ab9e19f6eb589a4cd7c358f81a3",
+      "car_ap_pct": 18.25028276306898,
+      "car_ate_m": 1.1539192776975635,
+      "car_tracking": {
+        "amota": 0.00016103059581320522,
+        "motar": 0.006441223832528209,
+        "recall": 0.12795941375422773,
+        "tp": 621.0,
+        "fp": 617.0,
+        "ids": 60.0,
+        "mt": 24.0,
+        "gt": 5322.0,
+        "fn": 4641.0,
+        "mota": 0.0007515971439308045
+      },
+      "protocol": "Historical adapted SPD/NuScenes; no claim of canonical SE(3) noise",
+      "evaluation_protocol": "SPD-adapted detection_cvpr_2019 / tracking_nips_2019",
+      "tracking_event_definitions": {
+        "tp": "MOT MATCH events",
+        "ids": "MOT SWITCH events",
+        "matched_detections": 681.0,
+        "recall": "(tp + ids) / gt",
+        "working_point": "Per-class best MOTA; ties choose highest recall; not a shared fixed confidence"
+      },
+      "evaluator_script_sha256": "8a7a0f99b01b60a7bc1d68ef829c2d1d0a6101f742e0cea8ee9a309e32941256",
+      "input_sha256": {
+        "det": "07f9edd31783c43734f182ca253cb5c9c72ce35d3232f2676b7ce4d4aab0901d",
+        "track": "f328f663145f336b9711cc7d4fd83508b2f4591e89b13912f1d0e0879a447c40",
+        "split": "0a59332221f3618639f34fb70678d03c5221ab80fd69f2cf41acffca0d8859fd",
+        "infos": "b96cc81b1fd42913073f6b20c0d214981134c43e52231797d508967fda9c6e03"
+      }
+    },
+    {
+      "condition": "ori5",
+      "arm": "baseline",
+      "validation_scenes": 21,
+      "scored_tokens": 675,
+      "token_sha256": "ad0f2ad31924e2d6312911bd4ad71d309a298ab9e19f6eb589a4cd7c358f81a3",
+      "car_ap_pct": 15.897431409853585,
+      "car_ate_m": 1.117020227006172,
+      "car_tracking": {
+        "amota": 0.0,
+        "motar": 0.0,
+        "recall": 0.41525742202179633,
+        "tp": 1697.0,
+        "fp": 4415.0,
+        "ids": 513.0,
+        "mt": 54.0,
+        "gt": 5322.0,
+        "fn": 3112.0,
+        "mota": 0.0
+      },
+      "protocol": "Historical adapted SPD/NuScenes; no claim of canonical SE(3) noise",
+      "evaluation_protocol": "SPD-adapted detection_cvpr_2019 / tracking_nips_2019",
+      "tracking_event_definitions": {
+        "tp": "MOT MATCH events",
+        "ids": "MOT SWITCH events",
+        "matched_detections": 2210.0,
+        "recall": "(tp + ids) / gt",
+        "working_point": "Per-class best MOTA; ties choose highest recall; not a shared fixed confidence"
+      },
+      "evaluator_script_sha256": "8a7a0f99b01b60a7bc1d68ef829c2d1d0a6101f742e0cea8ee9a309e32941256",
+      "input_sha256": {
+        "det": "80c27d675d3cfcfd815f54e31fcb23ca4487e87f53d22e4c339530d9574834aa",
+        "track": "9e31a08ac04cbdbff89dea0697b69953331a1dee68f5ecc427c6a090c0a08121",
+        "split": "0a59332221f3618639f34fb70678d03c5221ab80fd69f2cf41acffca0d8859fd",
+        "infos": "b96cc81b1fd42913073f6b20c0d214981134c43e52231797d508967fda9c6e03"
+      }
+    },
+    {
+      "condition": "ori5",
+      "arm": "temporal_filter",
+      "validation_scenes": 21,
+      "scored_tokens": 675,
+      "token_sha256": "ad0f2ad31924e2d6312911bd4ad71d309a298ab9e19f6eb589a4cd7c358f81a3",
+      "car_ap_pct": 15.70260368922091,
+      "car_ate_m": 1.1106181458070183,
+      "car_tracking": {
+        "amota": 0.0,
+        "motar": 0.0,
+        "recall": 0.4304772641863961,
+        "tp": 1676.0,
+        "fp": 4913.0,
+        "ids": 615.0,
+        "mt": 65.0,
+        "gt": 5322.0,
+        "fn": 3031.0,
+        "mota": 0.0
+      },
+      "protocol": "Historical adapted SPD/NuScenes; no claim of canonical SE(3) noise",
+      "evaluation_protocol": "SPD-adapted detection_cvpr_2019 / tracking_nips_2019",
+      "tracking_event_definitions": {
+        "tp": "MOT MATCH events",
+        "ids": "MOT SWITCH events",
+        "matched_detections": 2291.0,
+        "recall": "(tp + ids) / gt",
+        "working_point": "Per-class best MOTA; ties choose highest recall; not a shared fixed confidence"
+      },
+      "evaluator_script_sha256": "8a7a0f99b01b60a7bc1d68ef829c2d1d0a6101f742e0cea8ee9a309e32941256",
+      "input_sha256": {
+        "det": "446c2955ff4073cb7391cbd8640a8b34d672a88eb957f0fd9b335eac929d5ce2",
+        "track": "a3936618c1f77b1b1edb855d0a49501867cb0f3a69d19896f9298fc51d8751ae",
+        "split": "0a59332221f3618639f34fb70678d03c5221ab80fd69f2cf41acffca0d8859fd",
+        "infos": "b96cc81b1fd42913073f6b20c0d214981134c43e52231797d508967fda9c6e03"
+      }
+    },
+    {
+      "condition": "combined",
+      "arm": "baseline",
+      "validation_scenes": 21,
+      "scored_tokens": 675,
+      "token_sha256": "ad0f2ad31924e2d6312911bd4ad71d309a298ab9e19f6eb589a4cd7c358f81a3",
+      "car_ap_pct": 18.791627618574097,
+      "car_ate_m": 1.1013244165048346,
+      "car_tracking": {
+        "amota": 0.0,
+        "motar": 0.0,
+        "recall": 0.4417512213453589,
+        "tp": 1818.0,
+        "fp": 4015.0,
+        "ids": 533.0,
+        "mt": 67.0,
+        "gt": 5322.0,
+        "fn": 2971.0,
+        "mota": 0.0
+      },
+      "protocol": "Historical adapted SPD/NuScenes; no claim of canonical SE(3) noise",
+      "evaluation_protocol": "SPD-adapted detection_cvpr_2019 / tracking_nips_2019",
+      "tracking_event_definitions": {
+        "tp": "MOT MATCH events",
+        "ids": "MOT SWITCH events",
+        "matched_detections": 2351.0,
+        "recall": "(tp + ids) / gt",
+        "working_point": "Per-class best MOTA; ties choose highest recall; not a shared fixed confidence"
+      },
+      "evaluator_script_sha256": "8a7a0f99b01b60a7bc1d68ef829c2d1d0a6101f742e0cea8ee9a309e32941256",
+      "input_sha256": {
+        "det": "87164de66051fa1209fb7170f4adc29ca8cbd65b12d33e955ac2c8aceeb4a166",
+        "track": "20145ad5b4f151a936b015a7cca2cd5c2810430993ac65d0f15c8514ce5fa07e",
+        "split": "0a59332221f3618639f34fb70678d03c5221ab80fd69f2cf41acffca0d8859fd",
+        "infos": "b96cc81b1fd42913073f6b20c0d214981134c43e52231797d508967fda9c6e03"
+      }
+    },
+    {
+      "condition": "combined",
+      "arm": "temporal_filter",
+      "validation_scenes": 21,
+      "scored_tokens": 675,
+      "token_sha256": "ad0f2ad31924e2d6312911bd4ad71d309a298ab9e19f6eb589a4cd7c358f81a3",
+      "car_ap_pct": 19.157974429230126,
+      "car_ate_m": 1.0789717527113247,
+      "car_tracking": {
+        "amota": 0.0,
+        "motar": 0.0,
+        "recall": 0.4487034949267193,
+        "tp": 1836.0,
+        "fp": 3801.0,
+        "ids": 552.0,
+        "mt": 72.0,
+        "gt": 5322.0,
+        "fn": 2934.0,
+        "mota": 0.0
+      },
+      "protocol": "Historical adapted SPD/NuScenes; no claim of canonical SE(3) noise",
+      "evaluation_protocol": "SPD-adapted detection_cvpr_2019 / tracking_nips_2019",
+      "tracking_event_definitions": {
+        "tp": "MOT MATCH events",
+        "ids": "MOT SWITCH events",
+        "matched_detections": 2388.0,
+        "recall": "(tp + ids) / gt",
+        "working_point": "Per-class best MOTA; ties choose highest recall; not a shared fixed confidence"
+      },
+      "evaluator_script_sha256": "8a7a0f99b01b60a7bc1d68ef829c2d1d0a6101f742e0cea8ee9a309e32941256",
+      "input_sha256": {
+        "det": "e8ceb335dc8c199e7104f91b4b609b69f692b526f6b00f0d484448fe56010757",
+        "track": "194143f5bb92dd4ee3915b2126c8d358cb3f306255566e9ee7f555b4fdee0dd1",
+        "split": "0a59332221f3618639f34fb70678d03c5221ab80fd69f2cf41acffca0d8859fd",
+        "infos": "b96cc81b1fd42913073f6b20c0d214981134c43e52231797d508967fda9c6e03"
+      }
+    }
+  ]
+}

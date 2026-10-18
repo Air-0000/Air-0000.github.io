@@ -1,0 +1,8 @@
+{
+  "repository": "https://github.com/Air-0000/OnSite-Transportation",
+  "commit": "6e84a4d3d0e7bda8db675a4ef0d950fcface9fb7",
+  "source": "TESS_PythonAPI/车道.csv",
+  "source_sha256": "4b051508957a19bf0a662581a1af34e937c105b7e1371881afd962589c207b7c",
+  "rendered_lane_polylines": 647,
+  "display": "Static rendering of source lane centerline coordinates. Not a vehicle replay or evidence of successful scheduling."
+}
