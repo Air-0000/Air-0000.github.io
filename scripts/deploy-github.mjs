@@ -3,13 +3,14 @@ import { mkdtempSync, rmSync, cpSync } from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 
-const repository = 'https://github.com/Air-0000/Air-0000.github.io.git';
 const source = path.resolve('public');
 function git(args, cwd = process.cwd(), capture = false) {
   const result = spawnSync('git', args, { cwd, stdio: capture ? 'pipe' : 'inherit', encoding: 'utf8' });
   if (result.status !== 0) throw new Error(`git ${args[0]} failed (${result.status})`);
   return result.stdout || '';
 }
+// Publish through the same remote this checkout uses, so SSH and HTTPS clones both work.
+const repository = git(['remote', 'get-url', 'origin'], process.cwd(), true).trim();
 try {
   git(['diff', '--quiet', 'HEAD', '--', 'public']);
   if (git(['ls-files', '--others', '--exclude-standard', '--', 'public'], process.cwd(), true).trim()) {
