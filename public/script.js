@@ -15,6 +15,14 @@
     try { localStorage.setItem('theme', root.dataset.theme); } catch {}
     reflectTheme();
   });
+  // Follow the system theme until the visitor picks one explicitly.
+  matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+    let stored = null;
+    try { stored = localStorage.getItem('theme'); } catch {}
+    if (stored === 'dark' || stored === 'light') return;
+    root.dataset.theme = e.matches ? 'dark' : 'light';
+    reflectTheme();
+  });
 
   const menuButton = document.getElementById('menuToggle');
   const navigation = document.getElementById('mainNavigation');
@@ -42,8 +50,10 @@
 
   const navLinks = Array.from(navigation?.querySelectorAll('a[href^="#"]') || []);
   const sections = navLinks.map(link => document.querySelector(link.getAttribute('href'))).filter(Boolean);
+  const header = document.querySelector('.header');
   let scheduled = false;
   function updateNavigation() {
+    header?.classList.toggle('is-scrolled', scrollY > 8);
     let current = '';
     for (const section of sections) {
       if (section.getBoundingClientRect().top <= 150) current = section.id;
@@ -96,7 +106,7 @@
   });
   function revealLinkedProject() {
     const id = location.hash.slice(1);
-    const target = id && document.getElementById(id);
+    const target = id ? document.getElementById(id) : null;
     if (target?.classList.contains('project-card') && target.hidden) applyFilter('all');
   }
   applyFilter('featured');
@@ -143,4 +153,25 @@
     } catch { showToast('请手动复制：' + email); }
     this.focus({ preventScroll: true });
   });
+
+  // Reveal content blocks as they scroll into view; skipped when motion is reduced.
+  if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const targets = Array.from(document.querySelectorAll('.section-heading, .research-feature, .result-summary, .system-card, .archive-door, .about-copy, .timeline, .skills > div, .honors > article, .contact-card, .remote-feature, .project-card'));
+    const revealer = new IntersectionObserver(entries => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+        // Blocks earlier in the page were scrolled past (e.g. after an anchor jump), so show them too.
+        for (const target of targets.slice(0, targets.indexOf(entry.target) + 1)) {
+          target.classList.add('is-visible');
+          revealer.unobserve(target);
+        }
+      }
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    targets.forEach(element => {
+      const index = Array.prototype.indexOf.call(element.parentElement.children, element);
+      element.style.setProperty('--delay', `${Math.min(index, 4) * 70}ms`);
+      element.classList.add('reveal');
+      revealer.observe(element);
+    });
+  }
 })();
